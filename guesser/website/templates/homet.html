@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #0a010f;
+        color: #ffeedb;
+        padding: 0;
+    }
+
+    .center {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #health {
+        position: absolute;
+        top: 10%;
+        right: 2%;
+    }
+
+    #display {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+    }
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        font-size: larger;
+        font-weight: bolder;
+    }
+
+    #guess {
+        margin-top: 50px;
+        width: 50%;
+        height: 5vh;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    #btns {
+        position: absolute;
+        bottom: 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .btn {
+        padding: 8% 5%;
+        background-color: #247b7b;
+        border-radius: 10%;
+        cursor: pointer;
+    }
+    
+    #check-btn {
+        padding: 10%;
+        background-color: #247b7b;
+        border-radius: 10%;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 540px) {
+        #guess {
+            width: 80%;
+        }
+    }
+</style>
+<body>
+    <h2 class="center" id="wave" align="center">Wave 1</h2>
+    <div id="health">💔3</div>
+    <div id="display"><span>??</span></div>
+    <input class="center" type="text" placeholder="Type in your guess" id="guess">
+    <div class="center"  id="btns">
+        <div class="btn">🙃</div>
+        <div id="check-btn">Check</div>
+        <div class="btn" disabled>=></div>
+    </div>
+</body>
+</html>
