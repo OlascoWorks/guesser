@@ -61,7 +61,7 @@ body {
 }
 
 #game-name {
-    margin-top: 2%;
+    margin-top: 5%;
     font-size: x-large;
     font-weight: bold;
 }
@@ -184,5 +184,18 @@ a {
     .modal {
         width: 30%;
         height: 30vw;
+    }
+
+    #table {
+        margin-top: 8%;
+    }
+
+    #play-btn {
+        margin-top: 5%;
+    }
+
+    #check-btn {
+        margin-top: 10%;
+        max-width: 35%;
     }
 }
