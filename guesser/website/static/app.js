@@ -64,7 +64,7 @@ getSecretNumber(wave).then(() => {
                     info.innerHTML = "No na, that's too <span style='color: red;'>low</span>🙄";
                 };
             } else {
-                check.ariaDisabled = true;
+                check.disabled = true;
                 modalText.textContent = `You lost😂. The number was ${secretNumber} btw🙄`;
                 closeBtn.innerHTML = "<a>&times;</a>";
                 closeBtn.children[0].setAttribute('href', '/home');
