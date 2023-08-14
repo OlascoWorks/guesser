@@ -10,19 +10,16 @@ views = Blueprint('views', __name__)
 @views.route('/home', methods=['GET', 'POST'])
 def home():
     users = User.query.all()
-    high_scores = []
-    for user in users:
-        high_scores.append(user.high_score)
-    high_scores.sort()
-    top_ten = []
-    for high_score in high_scores[:10]:
-        for user in users:
-            if user.high_score == high_score:
-                top_ten.append(user)
-                break
-    top_ten.reverse()
+    print(users)
+    top_users_dict = {}
 
-    return render_template('base.html', user=current_user, top_ten=top_ten, rank=1)
+    for user in users:
+        top_users_dict[user.high_score] = user
+
+    top_high_scores = sorted(top_users_dict.keys(), reverse=True)[:10]
+    top_ten = [top_users_dict[high_score] for high_score in top_high_scores]
+
+    return render_template('base.html', user=current_user, top_ten=top_ten)
 
 @views.route('/game', methods=['GET', 'POST'])
 def game():
